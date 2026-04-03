@@ -1,16 +1,26 @@
+/* RESET BÁSICO */
 body {
     font-family: "Roboto", Helvetica, Arial, sans-serif;
     margin: 0 auto;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    
+}
+
+/* HEADER */
 .header {
     background: #972700;
     color: white;
-    padding: 1rem;
+     padding: 0.5rem 1rem;
     position: fixed;
     left: 0;
     top: 0;
     right: 0;
+    z-index: 1000;
 }
 
 .header a {
@@ -19,11 +29,7 @@ body {
 }
 
 .logo-nav-container {
-    /* display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 27rem; */
-      display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
@@ -34,7 +40,6 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    
 }
 
 .navigation ul li {
@@ -44,37 +49,79 @@ body {
 .navigation ul li a {
     display: block;
     padding: 0.5rem 1rem;
-    transition: all 0.4s linear;
+    transition: all 0.3s ease;
     font-size: 14px;
 }
 
-.logo {
-    margin-left: 0;
+
+/* BOTON HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
 
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navigation {
+        width: 100%;
+    }
+
+    .navigation ul {
+          display: none !important; /* 🔥 fuerza ocultarlo */
+        flex-direction: column;
+        background: #972700;
+    }
+
+    .navigation ul.active {
+       display: flex !important; /* 🔥 solo aparece al hacer click */
+    }
+
+    .navigation ul li {
+          display: block;
+        border-top: 1px solid rgba(255,255,255,0.2);
+        text-align: center;
+    }
+
+}
+
+/* MAIN */
+.main {
+    padding-top: 6rem;
+}
+
+/* BANNER */
 .banner {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 81%;
-    height: auto;
-    
+    width: 100%;
+    max-width: 1000px; /* 🔥 límite */
+    margin: 0 auto; /* 🔥 centrado */
 }
 
 .banner img {
-    display: block;
-    margin: 0 auto;
+    width: 100%;
+    height: auto;
 }
 
-table {
-    margin-left: auto;
-    margin-right: auto;
+/* TABLA RESPONSIVE */
+.tabla {
+      width: 100%;
+    max-width: 750px; /* 🔥 límite real */
+    margin: 20px auto;
     border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
 }
 
-th,
-td {
-    width: 100px;
+th, td {
+    min-width: 120px;
     border: solid 1px #eee;
     padding: 10px;
 }
@@ -93,241 +140,133 @@ tr:hover {
     background-color: #DDDDDD;
 }
 
-.main {
-    padding-top: 5rem;
-}
-
-.icon-bar {
-    text-align: right;
-}
-
+/* LINEAS */
 .linea1 {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     display: block;
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
-.post h2 {
-    text-align: center;
-    font-size: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
-}
-
-.fotoHotel {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding-top: 30px;
-}
-
-
-/*.linea2 {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    padding-top: 30px;
-}*/
-
+/* TITULOS */
+.post h2,
 .content h2 {
     text-align: center;
-    font-size: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
 }
 
+/* IMAGEN PRINCIPAL */
+.fotoHotel {
+    margin: auto;
+    padding-top: 20px;
+}
+
+/* TEXTOS */
 .description {
     color: dimgray;
     text-align: center;
-    margin-left: 3rem;
+    margin: 1rem;
 }
 
-
 .page-description {
-    margin-left: 2rem;
+    margin: 1rem;
     color: darkslategray;
     line-height: 1.5rem;
     text-align: center;
 }
 
+/* GALERIA */
 .galeria {
     display: flex;
-    justify-content: center; /* centra horizontal */
+    justify-content: center;
     align-items: center;
-    gap: 20px; /* espacio entre imágenes */
-    flex-wrap: wrap; /* para que no se rompa en celular */
+    gap: 20px;
+    flex-wrap: wrap;
     margin: 40px 0;
 }
 
-
-
-.imagen-desc-1 {
-    max-height: 527px;
-    max-width: 350px;
-    border-radius: 2%;
-    margin-left: 4.7rem;
-    transition: transform 0.2s;
-    cursor: pointer;
-}
-
-.imagen-desc-1:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-}
-
-.imagen-desc-2 {
-    max-height: 527px;
-    max-width: 350px;
-    border-radius: 2%;
-    margin-left: 2.1rem;
-    transition: transform 0.2s;
-    cursor: pointer;
-}
-
-.imagen-desc-2:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-}
-
+.imagen-desc-1,
+.imagen-desc-2,
 .imagen-desc-3 {
-    max-height: 527px;
-    max-width: 350px;
-    border-radius: 2%;
-    margin-left: 2rem;
-    transition: transform 0.2s;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s;
     cursor: pointer;
 }
 
+.imagen-desc-1:hover,
+.imagen-desc-2:hover,
 .imagen-desc-3:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
+    transform: scale(1.05);
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.5));
 }
 
-.end-image {
-    padding-top: 5rem;
-    max-width: 1260px;
-    max-height: 486px;
-
-
+/* VIDEO */
+.video {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
 }
 
- .end-title {
-    text-align: center;
-    font-size: 30px;
-    color: #972700;
+.video iframe {
+    width: 100%;
+    max-width: 700px;
+    height: 400px;
 }
 
-/*.feature-icon {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 15px;
-    background: #972700;
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
-    line-height: 70px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-left: 15rem;
-}
-
-.llegar {
-    margin-left: 13.5rem;
-    font-size: 21px;
-    color: #972700;
-    display: inline-block;
-}
-
-.llegar1 {
-    color: dimgray;
-    margin-left: 13.7rem;
-    display: inline-block;
-}
-
-.mapas {
-    margin-left: 10rem;
-    font-size: 21px;
-    color: #972700;
-    display: inline-block;
-}
-
-.mapas1 {
-    color: dimgray;
-    margin-left: 10rem;
-    display: inline-block;
-}
-
-.hacer {
-    margin-left: 10rem;
-    font-size: 21px;
-    color: #972700;
-}
-
-.hacer1 {
-    color: dimgray;
-    margin-left: 7rem;
-    display: inline-block;
-}
-
-.gastronomia {
-    margin-left: 13.5rem;
-    font-size: 21px;
-    color: #972700;
-    display: inline-block;
-}
-.alojarse{
-    margin-bottom: 20px;
-    margin-left: 10rem;
-    font-size: 21px;
-    color: #972700;
-}
-.alojarse1{
-    color: dimgray;
-    margin-left: 12rem;
-    display: inline-block;
-}
-.clima{
-    margin-left: 11.5rem;
-    font-size: 21px;
-    color: #972700;
-}
-.clima1{
-    color: dimgray;
-    margin-left: 9rem;
-    display: inline-block;
+/* IMAGEN FINAL */
+/* .imagen-final {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
 } */
+
+.imagen-final {
+    width: 100vw; /* 🔥 ocupa todo el ancho de la pantalla */
+    margin-left: calc(-50vw + 50%); /* 🔥 rompe el centrado */
+}
+
+.imagen-final img {
+    width: 100%;
+    height: auto;
+}
+
+/* ACCESOS */
+.end-title {
+    text-align: center;
+    font-size: 28px;
+    color: #972700;
+}
 
 .accesos {
     max-width: 1100px;
-    margin: 60px auto;
+    margin: 40px auto;
     text-align: center;
 }
 
-/* FILAS */
 .grupo {
     display: flex;
     justify-content: center;
-    gap: 50px;
-    margin-bottom: 50px;
+    gap: 30px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
 }
 
-/* TARJETA */
 .grupo a {
     text-decoration: none;
     color: #333;
-    width: 180px;
+    width: 160px;
     padding: 20px 10px;
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
-/* HOVER TARJETA */
 .grupo a:hover {
     transform: translateY(-5px);
     background-color: #f5f5f5;
 }
 
-/* ICONO */
 .feature-icon {
     width: 70px;
     height: 70px;
@@ -340,95 +279,65 @@ tr:hover {
     transition: all 0.3s ease;
 }
 
-/* HOVER ICONO */
 .grupo a:hover .feature-icon {
     background: #481b0b;
     transform: scale(1.1);
 }
 
-/* TITULO */
 .grupo p {
     font-size: 16px;
     font-weight: bold;
     margin: 8px 0;
 }
 
-/* DESCRIPCIÓN */
 .grupo small {
     font-size: 13px;
     color: #777;
 }
 
-
-
+/* CTA */
 .cta {
     background-color: #972700;
     padding: 25px 0;
-  }
-  
-  .cta h2 {
-    margin-bottom: 5px;
-  }
-  
-  .cta h2,
-  .cta p {
-    color: #fff;
-  }
-  
-  .cta p {
-    margin-bottom: 0;
-    opacity: .75;
-  }
-  
-  .cta .btn-ghost {
-    position: relative;
-    top: 13px;
-  }
-  .btn {
-    background-color: #972700;
-    font-family: "Roboto", Helvetica, Arial, sans-serif;
-    font-weight: 800;
-    color: #fff;
-    padding: 15px 45px;
-    border-radius: 50px;
-  }
-  
-  .btn:hover {
-    background-color: #481b0b;
-    color: #fff;
-  }
-  
-  .btn:focus {
-    color: #fff;
-  }
-  
-  .btn-ghost {
-    border: 3px solid #fff;
-    background-color: transparent;
-  }
-  
-  .btn-ghost:hover {
-    background-color: #fff;
-    color: #972700;
-  }
-  
-
-  .video {
-    display: flex;
-    justify-content: center;
-    margin-top: 4rem;
-}
-  
-
-.imagen-final {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
+    text-align: center;
 }
 
-.imagen-final img {
-    width: 100%;      
-    max-width: 100%;  
-    height: auto;      
+.cta h2,
+.cta p {
+    color: #fff;
+}
+
+/* 🔥 RESPONSIVE 🔥 */
+@media (max-width: 768px) {
+
+    .logo-nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigation ul li {
+        display: block;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .navigation ul li a {
+        padding: 10px;
+    }
+
+    .video iframe {
+        height: 250px;
+    }
+
+    .post h2,
+    .content h2 {
+        font-size: 22px;
+    }
+
 }
